@@ -13,3 +13,5 @@
 !public
 .idea/workspace.xml
 
+# config ignore
+application.ini
