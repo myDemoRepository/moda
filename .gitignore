@@ -1,27 +1,15 @@
-# Compiled source #
-###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
+# Ignoring everything
+/*
 
-# Packages #
-############
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
+# ..except the top level project folders
+!api/
+!application/
+!console/
+!dealer/
+!library/
+!logs/
+!www/
+!composer.json
+!public
+.idea/workspace.xml
 
-# Logs and databases #
-######################
-*.log
-*.sql
-*.sqlite
