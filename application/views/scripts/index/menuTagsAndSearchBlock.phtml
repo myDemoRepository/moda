@@ -1,0 +1,41 @@
+<div class="row">
+    <?php if (
+        (!$this->info['razdelUrl'] && !$this->info['postUrl'])
+        || ($this->info['postUrl'])
+    ) : ?>
+        <div class="col-xs-12">
+            <div class="logo">
+                <a href="http://jenstvenayamoda.ru" class="name">Женственная мода<span>Самый полезный сайт о моде</span></a>
+            </div>
+            <div class="srch_block main_page_abs">
+                <input type="text" value="" id="search_str"><span class="srch_btn"><i class="fa fa-search" id="button_search_main"></i></span>
+            </div>
+        </div>
+    <?php else : ?>
+
+        <?php if (is_array($this->tagsList)) : /*TODO сделать красивый вывод тегов разделов и фильтр статей по ним */?>
+            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                <div class="tags_header_block">
+
+                <?php foreach ($this->tagsList as $key => $value) : ?>
+
+                    <div style="margin-top:10px;" data-razdel-filtres="<?= $value['tagUrl']; ?>" class="was-link">
+                        <div class="squaredThree">
+                            <input class="filter-input-menu" type="checkbox" value="None" id="id_<?= $value['tagUrl']; ?>" name="check" checked />
+                            <label class="filter-input-menu-label" id="label_<?= $value['tagUrl']; ?>" for="id_<?= $value['tagUrl']; ?>"></label>
+                        </div>
+                        <?= $value['tagName']?>
+                    </div>
+
+                <?php endforeach; ?>
+                        </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="srch_block">
+                    <input type="text" value="" id="search_str"><span class="srch_btn"><i class="fa fa-search" id="button_search_main"></i></span>
+                </div>
+            </div>
+        <?php endif;?>
+
+    <?php endif; ?>
+</div>

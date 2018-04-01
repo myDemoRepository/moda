@@ -1,0 +1,30 @@
+<?php if (count($this->result)>0) : 
+        $count = count($this->result);
+        if(count($this->result) > 0) {
+            if(count($this->result) > 3) {
+                $count = 3;
+            }
+        } ?>
+    <div>
+        Похожие статьи:
+    </div>
+    <?php for ($i=0;$i<$count;$i++):?>
+        <div class="row samepost_vert">
+           <div class="post-content">
+               <div class="post-img">
+                   <a class="razdel-links" href="<?=$this->baseUrl()?>/<?php echo($this->post_mass[$i]['description']);?>/<?php echo($this->post_mass[$i]['m4_urlname']);?>/">
+                       <img src="<?=$this->baseUrl()?>/public/image/statyi/<?php echo($this->post_mass[$i]['m0']);?>"/>
+                   </a>    
+               </div>
+               <div class="post-h1">
+                   <h2>
+                       <a rel='nofollow' target="_blank" class="tega" href="<?=$this->baseUrl()?>/<?php echo($this->post_mass[$i]['description']);?>/<?php echo($this->post_mass[$i]['m4_urlname']);?>/">
+                           <?php echo($this->post_mass[$i]['m4']);?>
+                       </a>
+                   </h2>
+               </div> 
+               <div class="clear"></div>
+           </div>
+       </div>
+   <?php endfor;?>
+<?php endif; ?>

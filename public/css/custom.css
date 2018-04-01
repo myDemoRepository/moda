@@ -1,0 +1,65 @@
+.highlitetext {
+    color: #ce376c;
+}
+
+.center-two
+{
+    margin-left: 135px;
+    margin-top: 4px;
+}
+
+.inerdivtext p 
+{
+    padding:0 20px !important;
+}
+.inerdivtext h2 
+{
+    padding:20px 20px !important;
+}
+.inerdivtext h3 
+{
+    padding:0 20px !important;
+    margin-top:20px;
+}
+.inerdivtext ul 
+{
+    font-size: 16px !important;	
+
+}
+
+.inerdivtext ul li
+{
+	margin-top:10px;
+}
+.inerdivtext 
+{
+	font-family: Verdana !important;
+}
+
+.text-center{
+    text-align: center;
+    display:block;
+}
+.clean-a {
+    text-decoration: none;
+}
+
+.razdel-href b:last-child{
+    float:right;
+}
+
+#scrollup {
+width: 50px;
+
+position: fixed; /* фиксированная позиция */
+opacity: 0.3; /* прозрачность */
+padding: 15px 10px 10px; /* отступы */
+background: #aaa;
+border-radius: 5px; /* скругление углов */
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+right: 10px; /* отступ слева */
+bottom: 10px; /* отступ снизу */
+display: none; /* спрятать блок */
+cursor: pointer;
+}

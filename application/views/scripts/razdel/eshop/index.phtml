@@ -1,0 +1,75 @@
+<?php
+    if (is_array($this->gallery) && count($this->gallery) > 0) {
+        $galleryBlock1 = [];
+        $galleryBlock2 = [];
+        $galleryBlock3 = [];
+        foreach ($this->gallery as $key => $value) {
+            foreach ($value as $index => $item) {
+                if ($index == 'line_position' && $item == 0) {
+                    $galleryBlock1[] = $value;
+                }
+                if ($index == 'line_position' && $item == 1) {
+                    $galleryBlock2[] = $value;
+                }
+                if ($index == 'line_position' && $item == 2) {
+                    $galleryBlock3[] = $value;
+                }
+            }
+        }
+    }
+
+    $temp = [];
+    foreach ($galleryBlock1 as $key => $value) {
+        foreach ($value as $index => $item) {
+            if ($index != 'text_position' && $index != 'line_position') {
+                foreach ($item as $el) {
+                    $temp[] = $el;
+                }
+            }
+        }
+    }
+    $galleryBlock1 = $temp;
+    $temp = [];
+    foreach ($galleryBlock2 as $key => $value) {
+        foreach ($value as $index => $item) {
+            if ($index != 'text_position' && $index != 'line_position') {
+                foreach ($item as $el) {
+                    $temp[] = $el;
+                }
+            }
+        }
+    }
+    $galleryBlock2 = $temp;
+    $temp = [];
+    foreach ($galleryBlock3 as $key => $value) {
+        foreach ($value as $index => $item) {
+            if ($index != 'text_position' && $index != 'line_position') {
+                foreach ($item as $el) {
+                    $temp[] = $el;
+                }
+            }
+        }
+    }
+    $galleryBlock3 = $temp;
+
+
+    //var_dump($galleryBlock1);
+?>
+
+<div class="row eshop-block">
+    <?php if ($galleryBlock1[0]['blockName']) : ?>
+        <h4><?= $galleryBlock1[0]['blockName']; ?></h4>
+    <?php endif;?>
+    <div class="col-sm-4">
+        <?= $this->galleryEshopHtml($galleryBlock1); ?>
+    </div>
+    <div class="col-sm-4">
+        <?= $this->galleryEshopHtml($galleryBlock2); ?>
+    </div>
+    <div class="col-sm-4">
+        <?= $this->galleryEshopHtml($galleryBlock3); ?>
+    </div>
+</div>
+
+
+

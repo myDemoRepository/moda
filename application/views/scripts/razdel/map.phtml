@@ -1,0 +1,38 @@
+<div class="conteiner">
+    
+    <div class="map row">
+        <span><h2>Что надеть</h2></span>
+        
+        <?php foreach($this->moda as $k => $v):?>
+        <span><h3><a class='tega' href="<?php echo($this->baseUrl());?>/post-<?php echo($v['id']);?>/"><?php echo($v['m4']);?></a></h3></span>
+        <?php endforeach;?>
+    </div>
+    <div class="map row">
+        <span><h2><a class='tega' href="<?php echo($this->baseUrl());?>/razdel-2/">Весна-Лето</a></h2></span>
+        
+        <?php foreach($this->vesna as $k => $v):?>
+        <span><h3><a class='tega' href="<?php echo($this->baseUrl());?>/post-<?php echo($v['id']);?>/"><?php echo($v['m4']);?></a></h3></span>
+        <?php endforeach;?>
+    </div>
+    <div class="map row">
+        <span><h2><a class='tega' href="<?php echo($this->baseUrl());?>/razdel-3/">Осень-Зима</a></h2></span>
+        
+        <?php foreach($this->zima as $k => $v):?>
+        <span><h3><a class='tega' href="<?php echo($this->baseUrl());?>/post-<?php echo($v['id']);?>/"><?php echo($v['m4']);?></a></h3></span>
+        <?php endforeach;?>
+    </div>
+    <div class="map row">
+        <span><h2><a class='tega' href="<?php echo($this->baseUrl());?>/razdel-4/">Женственные акксессуары</a></h2></span>
+        
+        <?php foreach($this->aks as $k => $v):?>
+        <span><h3><a class='tega' href="<?php echo($this->baseUrl());?>/post-<?php echo($v['id']);?>/"><?php echo($v['m4']);?></a></h3></span>
+        <?php endforeach;?>
+    </div>
+    <div class="map row">
+        <span><h2><a class='tega' href="<?php echo($this->baseUrl());?>/razdel-5/">Вечерние и Свадебные наряды</a></h2></span>
+        
+        <?php foreach($this->svad as $k => $v):?>
+        <span><h3><a class='tega' href="<?php echo($this->baseUrl());?>/post-<?php echo($v['id']);?>/"><?php echo($v['m4']);?></a></h3></span>
+        <?php endforeach;?>
+    </div>
+</div>

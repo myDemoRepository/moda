@@ -1,0 +1,56 @@
+<?php 
+    $n = $this->counterPosition;
+    foreach ($this->text as $k => $v): ?>
+<?php 
+    $text = $v['m1'];
+
+    $pos = strpos($text, '$END$');
+    $cutText = substr($text, 0, $pos);
+
+?>
+    <div class="blog_article">    
+        <div class="container">
+            <div class="row">
+                <?php if ($n % 2 == 0) : ?>
+                    <div class="col-sm-6 prev_img">                 
+                        <a href="<?= $this->baseUrl() ?>/<?php echo($v['description']); ?>/<?php echo($v['m4_urlname']); ?>/">
+                            <img src="<?= $this->baseUrl() ?>/public/image/statyi/<?php echo($v['m0']); ?>" alt="<?php echo($v['m4']); ?>">
+                        </a>
+                    </div>
+                    <div class="col-sm-6 text">
+                        <a class="clean-a" 
+                           href="<?= $this->baseUrl() ?>/<?php echo($v['description']); ?>/<?php echo($v['m4_urlname']); ?>/"
+                           title="<?php echo($v['m4']); ?>"
+                           >
+                            <h2><?php echo($v['m4']); ?></h2>
+                        </a>
+                        <?php echo $cutText; ?>
+                        <div class="readmore">
+                            <a href="<?= $this->baseUrl() ?>/<?php echo($v['description']); ?>/<?php echo($v['m4_urlname']); ?>/">Подробнее</a>
+                        </div>                                     
+                    </div>
+                <?php else: ?>
+                    <div class="col-sm-6 col-sm-push-6 prev_img">                 
+                        <a href="<?= $this->baseUrl() ?>/<?php echo($v['description']); ?>/<?php echo($v['m4_urlname']); ?>/">
+                            <img src="<?= $this->baseUrl() ?>/public/image/statyi/<?php echo($v['m0']); ?>" alt="<?php echo($v['m4']); ?>">
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-sm-pull-6 text">
+                        <a class="clean-a" 
+                           href="<?= $this->baseUrl() ?>/<?php echo($v['description']); ?>/<?php echo($v['m4_urlname']); ?>/"
+                           title="<?php echo($v['m4']); ?>" 
+                           >
+                            <h2><?php echo($v['m4']); ?></h2>
+                        </a>
+                        <?php echo $cutText; ?>
+                        <div class="readmore">
+                            <a href="<?= $this->baseUrl() ?>/<?php echo($v['description']); ?>/<?php echo($v['m4_urlname']); ?>/">Подробнее</a>
+                        </div>                                     
+                    </div>
+
+                <?php endif; ?>
+                <?php $n++; ?>
+            </div>
+        </div>
+    </div> 
+<?php endforeach; ?>

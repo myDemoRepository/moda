@@ -1,0 +1,102 @@
+<?php if($this->info_mark == 'map'):?>
+<div class="conteiner">
+    <?php foreach($this->map as $k => $v):?>
+    <div class="map row">
+        <h2><a href="<?=$this->baseUrl()?>/<?php echo($v[0]['description']);?>/" title="<?php echo($v[0]['name']);?>" target="_blank"><?php echo($v[0]['name']);?></a></h2>
+        <ul>
+        <?php foreach($v as $key=>$val):?>
+            <li>
+                
+                <h2><a class="tega" title="<?php echo($val['m4']);?>" target="_blank" href="<?=$this->baseUrl()?>/<?php echo($val['description']);?>/<?php echo($val['m4_urlname']);?>/">
+                        <?php echo($val['m4']);?>
+                    </a></h2>
+                
+            </li>
+        <?php endforeach;?>
+        </ul>    
+    </div>
+    <?php endforeach;?>
+</div>
+<?php else:?>
+<div class="conteiner">
+   <?php if($this->mark == 0):?> 
+   <div class='main-head'>
+       <div class='razdel-name'>
+           <h1><i>Вы в разделе "<b><span id="razdel-name-from"><?php echo($this->name);?></span></b>"</i></h1>
+       </div>
+        <?php foreach ($this->text as $k => $v):?>
+            <div class="row">
+                  
+                <div class="post-content">
+                    <div class="post-img">
+                        <a class="razdel-links" href="<?=$this->baseUrl()?>/<?php echo($v['description']);?>/<?php echo($v['m4_urlname']);?>/">
+                            <img src="<?=$this->baseUrl()?>/public/image/statyi/<?php echo($v['m0']);?>"/>
+                        </a>    
+                    </div>
+                    
+                    <div class="post-h1">
+                        <h2>
+                            <a class="tega" href="<?=$this->baseUrl()?>/<?php echo($v['description']);?>/<?php echo($v['m4_urlname']);?>/">
+                                <?php echo($v['m4']);?>
+                            </a>
+                        </h2>
+                    </div> 
+                    <div class="post-text">
+                        <?php 
+                        $haystack = $v['m1'];
+                        $needle   = '$END$';
+
+                        $pos      = strripos($haystack, $needle);
+
+                        if ($pos === false) 
+                        {
+                            $post = $v['m1'];
+                            $x = 499;
+                            while ($post[$x] != ' ')
+                            {
+                               $x++; 
+                            }
+                            $post = substr($v['m1'], 0 , $x)." ...";
+                        } 
+                        else 
+                        {
+                           $post = substr($v['m1'], 0 , $pos)." ...";
+                        }
+                        ?>
+                        <span><?php echo($post);?></span>
+                        <?php
+                        $arr_teg_id = explode(';',$v['tegs_id']);
+                        unset($arr_teg_id[0]);
+                        unset($arr_teg_id[count($arr_teg_id)]);
+
+                        $arr_teg_name = explode(',',$v['m5']);
+
+                        ?>
+                        <div class="post_tegs">Теги статьи: 
+                        <?php
+                            $html="";
+                            $i=1;
+                            foreach($arr_teg_name as $key => $val)
+                            {
+                                $html .= "<a rel='nofollow' class='tega showteg' href='".$this->baseUrl()."/teg/".$arr_teg_id[$i]."/'>".$val."</a> ,";
+                                $i++;
+                            }
+                            $html = substr($html, 0,-1);
+                            echo $html;
+                        ?>
+                        </div>
+                    </div>
+                    
+                    <div class="clear"></div>
+                </div>
+            </div>
+        <?php endforeach ;?>
+    </div>
+   <?php else:?>
+    <span>Скоро появятся новые статьи...</span>
+    <?php endif;?>
+   
+    
+</div>
+<?php endif; ?>
+=======================

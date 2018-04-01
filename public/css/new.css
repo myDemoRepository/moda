@@ -1,0 +1,432 @@
+@font-face {
+    font-family: Pompadur; /* Гарнитура шрифта */
+    src: url(../fonts/7Ve20D2G.ttf); /* Путь к файлу со шрифтом */
+   }
+/*--- Reset --------------------------- */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h6, blockquote,
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q,
+s, samp, small, strike, sub, sup, tt, var, u, i, center, dl, dt, dd, fieldset,
+form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0; padding:0; border:0; outline:0; font-size:100%; font-weight:normal; vertical-align:baseline; background:transparent; zoom:1;}
+
+img{vertical-align:middle; border:0; outline:0;}
+input, textarea, select{vertical-align:middle;}
+
+html, body {width: 100%; height: 100%;}
+
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+:focus {outline: 0;}
+ins, del {text-decoration: none;}
+table {border-collapse: collapse; border-spacing: 0;}
+
+img
+{
+border-radius:5px;
+}
+
+a 
+{
+text-decoration :none; 
+color:#77426C;
+font-family: Pompadur, 'Comic Sans MS', cursive;
+font-size: 20px;
+}
+a:link {color:#77426C}      /* unvisited link ������� */
+a:visited {color:#77426C}  /* visited link �������*/
+a:hover {
+    text-decoration:underline ;
+    color:#77426C;}  /* mouse over link  �������*/
+a:active {color:#F0FFEB}
+
+ul
+{
+    list-style-image: url("../image/ul1.png");
+    margin : 15px;
+}
+
+.clear
+{
+    clear:both;
+}
+h1 
+{
+    font-size: 22px;
+    line-height: 26px;
+    color: #3b4044;
+    font-weight: 600;
+}
+h2
+{
+    font-size: 18px;
+    line-height: 24px;
+    color: #3b4044;
+    font-weight: 600;
+}
+h3
+{
+    font-size: 14px;
+    line-height: 22px;
+    color: #3b4044;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+h4
+{
+    font-size: 12px;
+    line-height: 20px;
+    color: #3b4044;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+body{background-color:#E0BDF4;}
+
+#slides 
+{
+      display:none;
+}
+
+.post-text
+{
+    padding:0 10px;
+}
+
+.wraper
+{
+    width: 100%; 
+    
+    font-family: Arial; 
+    font-size: 12px; 
+    color: #363636;
+    
+}
+.header
+{
+    margin-top: 10px !important;  
+    margin-bottom: 10px !important;
+    width:1360px;
+    height:100px;
+    background-image:url('../image/header.jpg');
+    background-color:#77426C;
+    margin:0 auto;
+    border-radius: 5px;
+}
+.wraper-iner
+{
+    width:1360px;
+    margin:0 auto;
+    
+}
+
+.left
+{
+    
+    width:200px;
+    float:left;
+    background-color: #fff;
+    border-radius: 5px;
+    padding:5px;
+    box-shadow: 0 0 10px white;
+}
+.gallery
+{
+    width:950px;
+    height:230px;
+    border-radius: 5px;
+    overflow: hidden;
+    
+}
+
+.main-content
+{
+    
+    float:left;
+}
+.center
+{
+    width:950px;
+    margin-left:10px;
+    margin-right:10px;
+    float:left;
+    background-color: #fff;
+    border-radius: 5px;
+    padding:5px;
+    box-shadow: 0 0 10px white;
+}
+.container
+{
+    width:100%;
+    
+}
+
+.post-header
+{
+    padding:5px 20px;
+}
+
+.conteiner .main-head .razdel-name
+{
+    padding:5px;
+}
+
+.conteiner .razdel-name
+{
+    padding:5px 20px;
+}
+
+.right
+{
+    width:160px;
+    float:left;
+    background-color: #fff;
+    border-radius: 5px;
+    padding:5px;
+    box-shadow: 0 0 10px white;
+}
+
+
+ul.razdels-ul
+{
+    list-style:none;
+    padding-left:10px;
+}
+ul.razdels-ul li
+{
+    margin:10px;
+}
+ul.razdels-ul li a:hover
+{
+    text-decoration: none;
+    color: #B01E1E;
+}
+
+ul.razdels-ul li.r-name
+{
+    margin:0;
+}
+.footer
+{
+    width:1340px;
+    height:50px;
+    background-color: #fff;
+    /*border-top:1px solid #ccc;*/
+    margin:20px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px white;
+}
+.f-left
+{
+    width:1000px;
+    float:left;
+    margin-left:10px;
+}
+
+.f-right
+{
+    width:80px;
+    float:right;
+    margin-top:10px;
+    margin-right:15px;
+}
+
+.row
+{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.post-img
+{
+    float: left;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+
+ul.footer-ul li
+{
+    float:left;
+    margin-left:20px;
+}
+// разметка фотки
+.inner_text_div
+{
+    width:100%;
+}
+.inner_text_div div
+{
+    width:600px;
+    margin: 0 auto;
+}
+
+.inner_text_div div a img
+{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+.container
+{
+	font-family: Verdana !important;
+}
+
+.conteiner p
+{
+    font-size: 16px;
+    text-align: justify;
+}
+
+.main-head
+{
+   
+}
+
+.footer-ul
+{
+    list-style: none outside none;
+}
+.center-two
+{
+    margin-left: 135px;
+    margin-top: 4px;
+}
+
+.inerdivtext p 
+{
+    padding:0 20px !important;
+}
+.inerdivtext h2 
+{
+    padding:20px 20px !important;
+}
+.inerdivtext h3 
+{
+    padding:0 20px !important;
+    margin-top:20px;
+}
+.inerdivtext ul 
+{
+    font-size: 16px !important;	
+
+}
+
+.inerdivtext ul li
+{
+	margin-top:10px;
+}
+.inerdivtext 
+{
+	font-family: Verdana !important;
+}
+.pagination
+{
+    width:110px;
+    margin:0 auto;
+    
+}
+.assign-posts
+{
+    width:100%;
+    height: auto;
+    background-color:#fff;
+    
+}
+.samepost
+{
+    width:30%;
+    float:left;
+    margin:10px 15px;
+}
+.razdel-href
+{
+    margin-left:20px;
+}
+.bigfoto
+{
+    width: 668px;
+}
+.scrollToTop{
+	width:200px; 
+	height:22px;
+	padding:5px; 
+	text-align:center; 
+	background: #fff;
+	font-weight: bold;
+	color: #444;
+	text-decoration: none;
+	position:fixed;
+	top: 0px;
+        margin-top:15px;
+        margin-left:-5px;
+	display:none;
+	border-radius: 5px;
+        cursor:pointer;
+}
+.scrollToTop:hover{
+	text-decoration:none;
+}
+.scrollsnap
+{
+    float:left;
+    margin-top:2px;
+    width:20px;
+    height: 20px;
+    background: url('../image/up.png') no-repeat ;
+    background-size: cover;
+}
+
+.scrolltext
+{
+    float:left;
+    width: 160px;
+    height: 20px;
+    font-family: Pompadur, 'Comic Sans MS', cursive;
+    font-size: 20px;
+}
+
+.samepost_vert
+{
+    display:block;
+    
+}
+.samepost_vert img
+{
+    margin-left:13px;
+}
+
+.bigmaingalery
+{
+    display: block;
+    width: 950px;
+    height: 450px;
+   
+}
+.bigmaingalery img 
+{
+    border-radius: 5px;
+}
+.testman
+{
+    
+    display:inline-block;
+    position:relative;
+    z-index:100;
+    bottom:50px;
+    background-color: white;//#e0bdf4;//#77426c;
+    border-radius: 5px;
+    color:white;
+    height: 35px;
+    margin-left:20px;
+    
+}
+.testman span
+{
+    display:block;
+    margin:auto;
+    padding-left:10px;
+    padding-right:30px;
+    font-size:25px;
+    font-family:Pompadur;
+    text-align: center;
+    color:#77426c;
+    
+}

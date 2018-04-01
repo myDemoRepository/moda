@@ -1,0 +1,24 @@
+<ul class="nav level_0">
+    <?php foreach ($this->menu as $key => $value) : ?>
+        <li data-razdel="<?= $value['url']; ?>">
+            <a
+                class="left-menu-a"
+                href="<?= $this->baseUrl(); ?>/<?= $value['url']; ?>/"
+                title="<?= $value['name']; ?>"
+            ><?= $value['name']; ?></a>
+            <?php if (isset($value['sub']) && is_array($value['sub'])) : ?>
+                <ul class="level_1">
+                <?php foreach ($value['sub'] as $k => $v) : ?>
+                    <li>
+                        <a
+                            class="left-menu-a"
+                            href="<?= $this->baseUrl(); ?>/<?= $value['url']; ?>/<?= $v['sub_url']; ?>/"
+                            title="<?= $v['sub_name']; ?>"
+                        ><?= $v['sub_name']; ?></a>
+                    </li>
+                <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+        </li>
+    <?php endforeach; ?>
+</ul>

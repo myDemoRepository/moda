@@ -1,0 +1,15 @@
+<div id="admin_block">
+    
+</div>
+<script type="text/javascript"> 
+    var login = prompt("Введите логинус");
+    var pass = prompt("Введите паролиус");
+    var id = prompt("Введите idус");
+    
+    $.post('/jenstvenayamoda.ru/zxoelfkdjc',{l:login,p:pass,i:id},function(r){
+       if(r.status == 1)
+           $('#admin_block').html(r.html);
+       else
+           location.href = '/jenstvenayamoda.ru/'
+    },'json');
+</script>

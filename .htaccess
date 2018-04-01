@@ -1,0 +1,13 @@
+<IfModule mod_deflate.c>
+SetOutputFilter DEFLATE
+Header append Vary User-Agent
+</IfModule>
+
+SetEnv APPLICATION_ENV production
+
+RewriteRule .* index.php
+
+# for localhost need this comments
+#RewriteBase /
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ http://%1/ [R=301,L]

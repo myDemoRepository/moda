@@ -1,0 +1,151 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="breadcrumbs">
+                <ul>
+                    <li><a href="<?= $this->baseUrl() ?>/">Главная</a></li>
+                    <li><a href="<?= $this->baseUrl() ?>/<?php echo($this->razdelUrl); ?>/"><?php echo($this->name); ?></a></li>
+                    <li><a href="<?= $this->baseUrl() ?>/<?php echo($this->razdelUrl); ?>/<?php echo($this->postUrl); ?>"><?php echo($this->postName); ?></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog" id="statya-page-main" data-id="<?php echo $this->text[0]['id']; ?>">
+        
+        <h1><b><?php echo($this->text[0]['m4']);?></b></h1>
+        <div class=""><?php
+            $htmlTegsName = $this->text[0]['m5'];
+            $htmlTegs = $this->text[0]['tegs_id'];
+            $mixNames = explode(',', $htmlTegsName);
+            $mixUrl = explode(';', $htmlTegs);
+            unset($mixUrl[0]);
+            array_pop($mixUrl);
+            $combinedTagsData = array();
+            if (count($mixNames) == count($mixUrl)) {
+                foreach ($mixUrl as $key => $value) {
+                    $n = $key - 1;
+                    $combinedTagsData[$value] = trim($mixNames[$n]);
+                }
+            }
+            $urlMass = '';
+            foreach ($combinedTagsData as $url => $name) {
+                $urlMass .= '<a style="margin-top:10px;" href="/teg/' . $url . '">' . $name . '</a>';
+            }
+            $htmlTegsDiv = '<div class="tags_block">'
+                                . '<div class="container">'
+                                    . '<div class="row">'
+                                        . '<div class="col-md-12">'
+                                            . $urlMass
+                                        . '</div>'
+                                    . '</div>'
+                                . '</div>'
+                            . '</div>';
+            $text = str_replace('$BASEURL$', $this->baseUrl(), $this->text[0]['m1']);
+            $text = str_replace('$CATEGORY$', $this->name, $text);
+
+            if (is_array($this->htmlBlock) && count($this->htmlBlock) > 0) {
+                foreach ($this->htmlBlock as $key => $value) {
+                    $text = str_replace('$ONLINESHOP$_' . $key, $value, $text);
+                }
+            }
+
+            $needle   = '$END$';
+
+            $pos  = strripos($text, $needle);
+
+        if ($pos === false) {
+            echo($text);
+        } else {
+            $text = substr_replace($text, '', $pos, 5);
+            echo($text);
+        }
+
+        ?>
+        <div style="text-align:center;margin-top:10px;margin-bottom:10px;">
+		<div class="social-likes" data-counters="no">
+			<div class="pinterest pinteres-post" title="Добавить фотографии на Pinterest">Pinterest</div>
+			<div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
+			<div class="twitter" data-via="jenstvenayamoda" title="Поделиться ссылкой в Твиттере">Twitter</div>
+			<div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Вконтакте</div>
+			<div class="plusone" title="Поделиться ссылкой в Гугл-плюсе">Google+</div>
+		</div>
+	</div>
+	
+	    <!-- Google ad sense -->
+    <div style="margin-left: 15px;">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- arcticle block -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3015947759845106"
+     data-ad-slot="1268478400"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    
+    
+    </div>
+    <!-- -->
+
+        <?php if (is_array($this->mostPopularBlock) && count($this->mostPopularBlock) > 0) : ?>
+        <div class="popular_block">
+        <div class="container">
+                <h2>Похожие статьи</h2>
+                <div class="row">
+                    <?php $effectOrder = array(0, 2, 2, 1);
+                    $i = 0;
+                    $effectsArray = array(
+                        0 => 'slideInLeft',
+                        1 => 'slideInRight',
+                        2 => 'zoomIn'
+                    );?>
+                    <?php foreach ($this->mostPopularBlock as $key => $value) : ?>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="pop_art_block wow <?php echo $effectsArray[$effectOrder[$i]]; ?>">
+                                <div class="pop_art_img">
+                                    <img src="<?php echo $this->baseUrl(); ?>/public/image/statyi/<?php echo $value['m0']; ?>" alt="<?php echo $value['m4']; ?>">
+                                </div>
+                                <div class="pop_art_title">
+                                    <a href="<?php echo $this->baseUrl(); ?>/<?php echo($value['description']); ?>/<?php echo($value['m4_urlname']); ?>/">
+                                        <?php echo $value['m4']; ?>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <?php $i++; ?>
+                    <?php endforeach; ?>
+                </div>
+            </div>		        
+        </div>   
+        <?php endif; ?>
+
+        </div>
+
+        <input type="hidden" id="post_id_div" value="<?php echo($this->param);?>">  
+    </div> 
+    <div class="container new_art" id="main_page_search_block" style="display:none;">
+        
+    </div>
+    
+    
+    <textarea id="editor" style="width:1100px; height:700px; display:none; font-size:20px;">
+        
+    </textarea>
+    <div class="row">
+		<div class="col-xs-12 col-lg-2"></div>
+		<div id="pinparent" class="col-xs-12 col-lg-8" style="margin-left : 15px">
+			<a href="https://www.pinterest.com/lettersforme14/" data-pin-do="embedUser" data-pin-scale-width="80" data-pin-scale-height="300" data-pin-board-width="700">    Посетите профиль Пинера Женственная  в Pinterest.</a><!-- Please call pinit.js only once per page -->	
+		</div> 
+		<div class="col-xs-12 col-lg-2"></div>
+	</div>
+    
+
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.razdel-href').before('<?= $htmlTegsDiv; ?>');
+    });
+</script>

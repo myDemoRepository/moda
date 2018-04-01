@@ -1,0 +1,28 @@
+<div id="comment_add_form"> <!--Форма добавления отзыва в БД отзывов.-->
+    <form action="" accept-charset="utf-8" method="POST" id="coment_form">
+            <p>
+                <span class='form_fields'>Ваше имя(обязательно)</span>
+                <span class='form_inputs'><input id="from_name" type="text" maxlength="25"  name="from" maxlength="30"></span>
+            </p>
+
+            <p>
+                <span class='form_fields'>Ваш email(обязательно,не публикуется)</span>
+                <span class='form_inputs'><input id="from_email" type="text" maxlength="25"  name="email" maxlength="50"></span>
+            </p>
+
+            <p>
+                <span class='form_fields'>Проверочное число <?php echo($this->value);?></span>
+                <span class='form_inputs number_corect'><input id="corect_num" type='text' name='code' value='' maxlength="4"></span>
+            </p>
+ 
+            <p>
+                <span class='form_fields'>Ваш отзыв(обязательно)</span>
+            </p>
+            <p>
+                <textarea id="from_text"  name="text" rows="5" cols="65"></textarea>
+            </p>
+            <p>
+                <input class="send_comment" type="submit" image="" name="submit" value="Оставить коментарий">
+            </p>
+    </form>
+</div>
