@@ -1,13 +1,14 @@
-<IfModule mod_deflate.c>
-SetOutputFilter DEFLATE
-Header append Vary User-Agent
-</IfModule>
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine on
 
-SetEnv APPLICATION_ENV production
+RewriteCond %{REQUEST_URI} !^/(web)
+RewriteRule ^assets/(.*)$ /web/assets/$1 [L]
+RewriteRule ^css/(.*)$ /web/css/$1 [L]
+RewriteRule ^js/(.*)$ /web/js/$1 [L]
+RewriteRule ^images/(.*)$ web/images/$1 [L]
+RewriteRule (.*) /web/$1
 
-RewriteRule .* index.php
-
-# for localhost need this comments
-#RewriteBase /
-#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-#RewriteRule ^(.*)$ http://%1/ [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /web/index.php
